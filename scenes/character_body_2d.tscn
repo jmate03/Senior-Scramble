@@ -1,19 +1,63 @@
-[gd_scene load_steps=3 format=3 uid="uid://d2fuxm38ciwt4"]
+[gd_scene load_steps=9 format=3 uid="uid://d2fuxm38ciwt4"]
 
 [ext_resource type="Script" uid="uid://cj8n0y4qwrc5q" path="res://scripts/placeholderplayer.gd" id="1_lj8jo"]
+[ext_resource type="Texture2D" uid="uid://bch0wlfa4o8d0" path="res://assets/Player/player_idle.png" id="2_g2brh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nckey"]
-size = Vector2(11, 12)
+size = Vector2(9, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dn4c7"]
+atlas = ExtResource("2_g2brh")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4vejd"]
+atlas = ExtResource("2_g2brh")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ws0vm"]
+atlas = ExtResource("2_g2brh")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rhr3r"]
+atlas = ExtResource("2_g2brh")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t53lx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dn4c7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4vejd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ws0vm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rhr3r")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_lj8jo")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
+visible = false
 position = Vector2(-1.69166, -8.0747)
 scale = Vector2(0.108333, 0.168445)
 color = Color(1, 0, 0.177396, 1)
 polygon = PackedVector2Array(-49, -35.1765, -49, 42, 71, 42, 71, -35.1765)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, -7)
+position = Vector2(0.5, -8.5)
 shape = SubResource("RectangleShape2D_nckey")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -9)
+sprite_frames = SubResource("SpriteFrames_t53lx")
+animation = &"idle"
+frame_progress = 0.662678
