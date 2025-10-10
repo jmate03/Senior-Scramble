@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=4 uid="uid://biylg3tiud64f"]
 
 [ext_resource type="PackedScene" uid="uid://d2fuxm38ciwt4" path="res://scenes/character_body_2d.tscn" id="1_uwrxv"]
-[ext_resource type="Script" uid="uid://bgtqcebwo6tuh" path="res://scenes/main.gd" id="1_yqjtg"]
+[ext_resource type="Script" uid="uid://bgtqcebwo6tuh" path="res://scripts/main.gd" id="1_yqjtg"]
 [ext_resource type="Texture2D" uid="uid://bxbfqvbqmnrxj" path="res://assets/wood_floor.png" id="4_lbhrr"]
-[ext_resource type="Script" uid="uid://dnsgv87t3fbrk" path="res://scenes/ground.gd" id="5_iywne"]
+[ext_resource type="Script" uid="uid://dnsgv87t3fbrk" path="res://scripts/ground.gd" id="5_iywne"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lbhrr"]
 texture = ExtResource("4_lbhrr")
