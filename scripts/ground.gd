@@ -8,7 +8,7 @@ var screen_size : Vector2i
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	screen_size = get_window().size
+	screen_size = get_viewport().get_visible_rect().size
 	
 
 

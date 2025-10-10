@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Senior Scramble"
-run/main_scene="uid://biylg3tiud64f"
+run/main_scene="uid://bphehqrf67473"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://d2fuxm38ciwt4"]
 
-[ext_resource type="Script" uid="uid://cj8n0y4qwrc5q" path="res://scripts/placeholderplayer.gd" id="1_lj8jo"]
+[ext_resource type="Script" uid="uid://cj8n0y4qwrc5q" path="res://scripts/player.gd" id="1_lj8jo"]
 [ext_resource type="Texture2D" uid="uid://bch0wlfa4o8d0" path="res://assets/Player/player_idle.png" id="2_g2brh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nckey"]
@@ -43,14 +43,8 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D"]
+scale = Vector2(2, 2)
 script = ExtResource("1_lj8jo")
-
-[node name="Polygon2D" type="Polygon2D" parent="."]
-visible = false
-position = Vector2(-1.69166, -8.0747)
-scale = Vector2(0.108333, 0.168445)
-color = Color(1, 0, 0.177396, 1)
-polygon = PackedVector2Array(-49, -35.1765, -49, 42, 71, 42, 71, -35.1765)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, -8.5)
@@ -60,4 +54,3 @@ shape = SubResource("RectangleShape2D_nckey")
 position = Vector2(0, -9)
 sprite_frames = SubResource("SpriteFrames_t53lx")
 animation = &"idle"
-frame_progress = 0.662678
