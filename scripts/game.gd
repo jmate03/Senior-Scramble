@@ -1,4 +1,4 @@
-extends Node2D
+extends Node
 var game_running : bool 
 var game_over : bool 
 var score

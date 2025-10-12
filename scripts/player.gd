@@ -3,7 +3,7 @@ extends CharacterBody2D
 @onready var animated = $AnimatedSprite2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -300.0
-
+signal hit
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -23,6 +23,6 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	
 	if !velocity: #temp
-		animated.play("idle")
+		animated.play("run")
 
 	move_and_slide()
