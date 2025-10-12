@@ -97,4 +97,5 @@ shape = SubResource("RectangleShape2D_nckey")
 position = Vector2(0, -9)
 sprite_frames = SubResource("SpriteFrames_t53lx")
 animation = &"run"
-frame_progress = 0.125497
+frame = 3
+frame_progress = 0.48238
