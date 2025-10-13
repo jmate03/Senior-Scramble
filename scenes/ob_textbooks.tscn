@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://cyhhe436fvjub"]
+
+[ext_resource type="Texture2D" uid="uid://bdgtabhuv5ykd" path="res://assets/Obstacles/textbooks.png" id="1_27ino"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_drdry"]
+atlas = ExtResource("1_27ino")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cjuko"]
+atlas = ExtResource("1_27ino")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sh7k1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_drdry")
+}],
+"loop": true,
+"name": &"textbooks1",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cjuko")
+}],
+"loop": true,
+"name": &"textbooks2",
+"speed": 0.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i4xvc"]
+size = Vector2(26, 24)
+
+[node name="ob_textbooks" type="Area2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -1)
+sprite_frames = SubResource("SpriteFrames_sh7k1")
+animation = &"textbooks2"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_i4xvc")
