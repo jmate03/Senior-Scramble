@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://cyhhe436fvjub"]
 
 [ext_resource type="Texture2D" uid="uid://bdgtabhuv5ykd" path="res://assets/Obstacles/textbooks.png" id="1_27ino"]
-[ext_resource type="Script" uid="uid://bdskdm4gtekfw" path="res://scenes/obstacle_base.gd" id="1_bin2b"]
+[ext_resource type="Script" uid="uid://bdskdm4gtekfw" path="res://scripts/obstacle_base.gd" id="1_bin2b"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_drdry"]
 atlas = ExtResource("1_27ino")
