@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://dsn2ivnlhc0x0"]
+[gd_scene load_steps=8 format=3 uid="uid://dsn2ivnlhc0x0"]
 
 [ext_resource type="Texture2D" uid="uid://dslxltcj0sard" path="res://assets/Obstacles/papers.png" id="1_3lvoe"]
+[ext_resource type="Script" uid="uid://bdskdm4gtekfw" path="res://scenes/obstacle_base.gd" id="1_iaa62"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iaa62"]
 atlas = ExtResource("1_3lvoe")
@@ -45,6 +46,8 @@ animations = [{
 size = Vector2(26, 26)
 
 [node name="ob_papers" type="Area2D"]
+script = ExtResource("1_iaa62")
+y_offset = -21.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_yol58")

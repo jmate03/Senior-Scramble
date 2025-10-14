@@ -1,0 +1,10 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctlp3dhm2xje3"]
+
+[ext_resource type="Script" uid="uid://cagmmr20c8ihk" path="res://obstacle_spawner.gd" id="1_vyba0"]
+[ext_resource type="PackedScene" uid="uid://dsn2ivnlhc0x0" path="res://scenes/ob_papers.tscn" id="2_gmt3g"]
+[ext_resource type="PackedScene" uid="uid://cyhhe436fvjub" path="res://scenes/ob_textbooks.tscn" id="3_0ghqo"]
+
+[node name="obstacle_spawner" type="Node2D"]
+script = ExtResource("1_vyba0")
+obstacle_scenes = Array[PackedScene]([ExtResource("2_gmt3g"), ExtResource("3_0ghqo")])
+ground_y_position = 113.0
