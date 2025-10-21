@@ -27,5 +27,4 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body):
 	if body.name == "Player":
-		print("Player hit obstacle")
 		body.emit_signal("hit")

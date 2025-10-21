@@ -7,7 +7,13 @@ extends CharacterBody2D
 var is_ducking = false
 const SPEED = 300.0
 const JUMP_VELOCITY = -360.0
+
 signal hit
+signal lives_changed(new_lives)
+signal game_over
+
+var lives: int = 3
+var is_invulnerable = false
 
 func _ready():
 	standing_collision.disabled = false
@@ -67,4 +73,31 @@ func end_duck():
 	animated.play("run")
 
 func _on_hit():
-	print("Player hit")
+	if is_invulnerable:
+		return
+	lose_life()
+
+func lose_life():
+	lives -= 1
+	emit_signal("lives_changed", lives)
+	print("Lives remaining: ", lives)
+	
+	if lives <= 0:
+		emit_signal("game_over")
+		set_physics_process(false) 
+	else:
+		become_invulnerable()
+
+func become_invulnerable():
+	is_invulnerable = true
+	
+	# blink the player on hit 
+	var tween = create_tween()
+	tween.set_loops(6)
+	tween.tween_property(animated, "modulate:a", 0.3, 0.15)
+	tween.tween_property(animated, "modulate:a", 1.0, 0.15)
+	
+	# End invulnerability after 2 seconds
+	await get_tree().create_timer(2.0).timeout
+	is_invulnerable = false
+	animated.modulate.a = 1.0

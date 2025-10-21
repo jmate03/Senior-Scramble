@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://1ee3dx372j3"]
+
+[ext_resource type="Script" uid="uid://co2vjehrtl5tw" path="res://scripts/lives.gd" id="1_naohr"]
+[ext_resource type="Texture2D" uid="uid://blmyfq5kec76r" path="res://assets/life.png" id="2_h857v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xj1q3"]
+atlas = ExtResource("2_h857v")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r11ep"]
+atlas = ExtResource("2_h857v")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e1v4y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xj1q3")
+}],
+"loop": true,
+"name": &"empty",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r11ep")
+}],
+"loop": false,
+"name": &"full",
+"speed": 0.0
+}]
+
+[node name="Lives" type="Node2D"]
+script = ExtResource("1_naohr")
+
+[node name="Life1" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_e1v4y")
+animation = &"full"
+
+[node name="Life2" type="AnimatedSprite2D" parent="."]
+position = Vector2(13, 0)
+sprite_frames = SubResource("SpriteFrames_e1v4y")
+animation = &"full"
+
+[node name="Life3" type="AnimatedSprite2D" parent="."]
+position = Vector2(26, 0)
+sprite_frames = SubResource("SpriteFrames_e1v4y")
+animation = &"full"

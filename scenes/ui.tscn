@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dw48py8clkbik"]
+[gd_scene load_steps=3 format=3 uid="uid://dw48py8clkbik"]
 
 [ext_resource type="FontFile" uid="uid://cnk4iqinc1vkp" path="res://assets/MedodicaRegular.otf" id="1_nt7q6"]
+[ext_resource type="PackedScene" uid="uid://1ee3dx372j3" path="res://scenes/lives.tscn" id="2_x4jx1"]
 
 [node name="UI" type="CanvasLayer"]
 
@@ -12,20 +13,24 @@
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -59.0
-offset_top = 14.0
-offset_right = -11.0
-offset_bottom = 37.0
+offset_left = -183.0
+offset_top = 12.0
+offset_right = -135.0
+offset_bottom = 35.0
 grow_horizontal = 0
 theme_override_fonts/font = ExtResource("1_nt7q6")
 text = "Score: 0"
 
 [node name="Time Elapsed Label" type="Label" parent="."]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -59.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -29.5
+offset_right = 29.5
 offset_bottom = 23.0
-grow_horizontal = 0
+grow_horizontal = 2
 theme_override_fonts/font = ExtResource("1_nt7q6")
 text = "Time: 0:00"
+
+[node name="Lives" parent="." instance=ExtResource("2_x4jx1")]
+position = Vector2(276, 8)
