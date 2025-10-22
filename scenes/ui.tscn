@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dw48py8clkbik"]
+[gd_scene load_steps=3 format=3 uid="uid://dw48py8clkbik"]
 
 [ext_resource type="FontFile" uid="uid://cnk4iqinc1vkp" path="res://assets/MedodicaRegular.otf" id="1_nt7q6"]
 [ext_resource type="PackedScene" uid="uid://1ee3dx372j3" path="res://scenes/lives.tscn" id="2_x4jx1"]
-[ext_resource type="Texture2D" uid="uid://bdxta7g842tk2" path="res://assets/UI/pause.png" id="3_yev5y"]
 
 [node name="UI" type="CanvasLayer"]
 
@@ -35,11 +34,3 @@ text = "Time: 0:00"
 
 [node name="Lives" parent="." instance=ExtResource("2_x4jx1")]
 position = Vector2(276, 8)
-
-[node name="Pause Button" type="TextureButton" parent="."]
-unique_name_in_owner = true
-offset_left = 9.0
-offset_top = 1.0
-offset_right = 25.0
-offset_bottom = 17.0
-texture_normal = ExtResource("3_yev5y")

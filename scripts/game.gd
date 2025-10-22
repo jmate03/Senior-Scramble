@@ -15,7 +15,8 @@ func _ready() -> void:
 	%P_Restart.pressed.connect(_on_restart_pressed)
 	%"GO_Main Menu".pressed.connect(_on_main_menu_pressed)
 	%"P_Main Menu".pressed.connect(_on_main_menu_pressed)
-	# %"Pause Button".pressed.connect(_on_pause_button_pressed) # need to fix
+	%"Pause Button".pressed.connect(_on_pause_button_pressed) 
+	%Resume.pressed.connect(_on_resume_button_pressed)
 	
 	%"Pause Menu".hide()
 	%"Game Over".hide()
@@ -27,6 +28,8 @@ func _process(delta: float) -> void:
 	if game_running:
 		update_time(delta)
 		update_score(delta)
+	if Input.is_action_just_pressed("pause"):
+		_on_pause_button_pressed()
 	
 
 func start_game():
@@ -51,9 +54,19 @@ func _on_player_game_over():
 	obstacle_spawner.stop_spawn()
 	%"Game Over".show()
 	%"Final Score".text = "Final Score: " + str(int(score))
+
+# Button functions
 func _on_restart_pressed():
+	if get_tree().paused == true:
+		get_tree().paused = false
 	get_tree().reload_current_scene()
 func _on_main_menu_pressed():
+	if get_tree().paused == true:
+		get_tree().paused = false
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 func _on_pause_button_pressed():
 	%"Pause Menu".show()
+	get_tree().paused = true 
+func _on_resume_button_pressed():
+	%"Pause Menu".hide()
+	get_tree().paused = false

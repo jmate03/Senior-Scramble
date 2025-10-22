@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bphehqrf67473"]
+[gd_scene load_steps=14 format=3 uid="uid://bphehqrf67473"]
 
 [ext_resource type="Script" uid="uid://dxge4xu6fn5by" path="res://scripts/main_menu.gd" id="1_ekxnf"]
 [ext_resource type="FontFile" uid="uid://cnk4iqinc1vkp" path="res://assets/MedodicaRegular.otf" id="1_l6cm7"]
+[ext_resource type="Texture2D" uid="uid://bch0wlfa4o8d0" path="res://assets/Player/player_idle.png" id="3_bqqt6"]
+[ext_resource type="Script" uid="uid://3orj5xv2jc2v" path="res://scenes/idle_player.gd" id="4_wu84c"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l6cm7"]
 
@@ -16,6 +18,42 @@ shadow_size = 2
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ekxnf"]
 bg_color = Color(1, 1, 1, 1)
 shadow_size = 2
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wu84c"]
+atlas = ExtResource("3_bqqt6")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ln24"]
+atlas = ExtResource("3_bqqt6")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rtw2f"]
+atlas = ExtResource("3_bqqt6")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oa1go"]
+atlas = ExtResource("3_bqqt6")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tbmy8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wu84c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ln24")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rtw2f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oa1go")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 8.0
+}]
 
 [node name="Main Menu" type="Control"]
 layout_mode = 3
@@ -104,6 +142,14 @@ theme_override_constants/shadow_offset_y = 2
 theme_override_fonts/font = ExtResource("1_l6cm7")
 theme_override_font_sizes/font_size = 32
 text = "Senior Scramble!"
+
+[node name="IdlePlayer" type="AnimatedSprite2D" parent="."]
+position = Vector2(-121, 54)
+scale = Vector2(4.41406, 4.50507)
+sprite_frames = SubResource("SpriteFrames_tbmy8")
+animation = &"idle"
+frame_progress = 0.304618
+script = ExtResource("4_wu84c")
 
 [connection signal="pressed" from="VBoxContainer/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/settings" to="." method="_on_settings_pressed"]
