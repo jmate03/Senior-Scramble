@@ -11,8 +11,13 @@ var time_elapsed: float
 func _ready() -> void:
 	player.lives_changed.connect($UI/Lives.update_lives)  # Adjust $UI path if needed
 	player.game_over.connect(_on_player_game_over)
-	%Restart.pressed.connect(_on_restart_pressed)
-	%"Main Menu".pressed.connect(_on_main_menu_pressed)
+	%GO_Restart.pressed.connect(_on_restart_pressed)
+	%P_Restart.pressed.connect(_on_restart_pressed)
+	%"GO_Main Menu".pressed.connect(_on_main_menu_pressed)
+	%"P_Main Menu".pressed.connect(_on_main_menu_pressed)
+	# %"Pause Button".pressed.connect(_on_pause_button_pressed) # need to fix
+	
+	%"Pause Menu".hide()
 	%"Game Over".hide()
 	start_game()
 
@@ -50,3 +55,5 @@ func _on_restart_pressed():
 	get_tree().reload_current_scene()
 func _on_main_menu_pressed():
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+func _on_pause_button_pressed():
+	%"Pause Menu".show()

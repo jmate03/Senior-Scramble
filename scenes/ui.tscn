@@ -37,6 +37,7 @@ text = "Time: 0:00"
 position = Vector2(276, 8)
 
 [node name="Pause Button" type="TextureButton" parent="."]
+unique_name_in_owner = true
 offset_left = 9.0
 offset_top = 1.0
 offset_right = 25.0

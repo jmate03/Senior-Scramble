@@ -34,11 +34,11 @@ func _physics_process(delta: float) -> void:
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis("ui_left", "ui_right")
-	if direction:
-		velocity.x = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+	# var direction := Input.get_axis("ui_left", "ui_right")
+	# if direction:
+	#	velocity.x = direction * SPEED
+	#else:
+	#	velocity.x = move_toward(velocity.x, 0, SPEED)
 	
 	if is_on_floor():
 		if not is_ducking and animated.animation != "run":
@@ -93,7 +93,7 @@ func become_invulnerable():
 	
 	# blink the player on hit 
 	var tween = create_tween()
-	tween.set_loops(6)
+	tween.set_loops(4)
 	tween.tween_property(animated, "modulate:a", 0.3, 0.15)
 	tween.tween_property(animated, "modulate:a", 1.0, 0.15)
 	
