@@ -11,7 +11,9 @@ var time_elapsed: float
 func _ready() -> void:
 	player.lives_changed.connect($UI/Lives.update_lives)  # Adjust $UI path if needed
 	player.game_over.connect(_on_player_game_over)
-	
+	%Restart.pressed.connect(_on_restart_pressed)
+	%"Main Menu".pressed.connect(_on_main_menu_pressed)
+	%"Game Over".hide()
 	start_game()
 
 
@@ -42,3 +44,9 @@ func _on_player_game_over():
 	game_running = false
 	game_over = true
 	obstacle_spawner.stop_spawn()
+	%"Game Over".show()
+	%"Final Score".text = "Final Score: " + str(int(score))
+func _on_restart_pressed():
+	get_tree().reload_current_scene()
+func _on_main_menu_pressed():
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
