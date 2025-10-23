@@ -129,7 +129,7 @@ script = ExtResource("1_lj8jo")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -9)
 sprite_frames = SubResource("SpriteFrames_t53lx")
-animation = &"duck"
+animation = &"run"
 
 [node name="StandingCollision" type="CollisionShape2D" parent="."]
 position = Vector2(0, -8)

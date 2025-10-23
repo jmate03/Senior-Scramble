@@ -73,6 +73,8 @@ layout_mode = 2
 
 [node name="GameOver" type="Label" parent="UI/Game Over/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("3_p57ef")
 theme_override_font_sizes/font_size = 32
 text = "GAME OVER!"
@@ -81,6 +83,8 @@ horizontal_alignment = 1
 [node name="Final Score" type="Label" parent="UI/Game Over/PanelContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("3_p57ef")
 text = "Final Score: 0"
 horizontal_alignment = 1
@@ -88,18 +92,23 @@ horizontal_alignment = 1
 [node name="GO_Restart" type="Button" parent="UI/Game Over/PanelContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("3_p57ef")
 text = "Restart"
 
 [node name="GO_Main Menu" type="Button" parent="UI/Game Over/PanelContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("3_p57ef")
 text = "Return to Main Menu"
 
 [node name="Pause Menu" type="ColorRect" parent="UI"]
 unique_name_in_owner = true
 process_mode = 3
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -134,6 +143,8 @@ layout_mode = 2
 
 [node name="Pause" type="Label" parent="UI/Pause Menu/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("3_p57ef")
 theme_override_font_sizes/font_size = 32
 text = "Paused"
@@ -142,6 +153,8 @@ horizontal_alignment = 1
 [node name="Resume" type="Button" parent="UI/Pause Menu/PanelContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("3_p57ef")
 text = "Resume
 "
@@ -149,12 +162,16 @@ text = "Resume
 [node name="P_Restart" type="Button" parent="UI/Pause Menu/PanelContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("3_p57ef")
 text = "Restart"
 
 [node name="P_Main Menu" type="Button" parent="UI/Pause Menu/PanelContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("3_p57ef")
 text = "Return to Main Menu"
 
