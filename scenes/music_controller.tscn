@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cry1hbm561ixp"]
+
+[ext_resource type="AudioStream" uid="uid://4vyy13u2ls3a" path="res://assets/Sound/SeniorScrambleBGM.wav" id="1_o7k1f"]
+
+[node name="MusicController" type="Node"]
+process_mode = 3
+
+[node name="BG Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_o7k1f")
+autoplay = true

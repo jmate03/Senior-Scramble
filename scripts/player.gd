@@ -93,7 +93,7 @@ func become_invulnerable():
 	
 	# blink the player on hit 
 	var tween = create_tween()
-	tween.set_loops(4)
+	tween.set_loops(6)
 	tween.tween_property(animated, "modulate:a", 0.3, 0.15)
 	tween.tween_property(animated, "modulate:a", 1.0, 0.15)
 	

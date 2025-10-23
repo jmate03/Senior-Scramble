@@ -3,9 +3,9 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
-
+	%Settings.hide()
+	$Settings/BackButton.pressed.connect(_on_back_pressed)
+	%MusicSlider.value = db_to_linear(AudioServer.get_bus_volume_db(0)) 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
@@ -18,8 +18,18 @@ func _on_start_pressed() -> void:
 
 
 func _on_settings_pressed() -> void:
-	print("settings pressed")
+	%Settings.show()
 
 
 func _on_exit_pressed() -> void:
 	get_tree().quit()
+func _on_back_pressed() -> void:
+	%Settings.hide()
+
+
+func _on_music_slider_mouse_exited() -> void:
+	release_focus()
+
+
+func _on_apply_pressed() -> void:
+	AudioServer.set_bus_volume_db(0, linear_to_db(%MusicSlider.value))
