@@ -139,6 +139,7 @@ sprite_frames = SubResource("SpriteFrames_1ajci")
 position = Vector2(58, 20)
 scale = Vector2(3, 3.062)
 sprite_frames = SubResource("SpriteFrames_tbmy8")
+animation = &"idle"
 script = ExtResource("4_wu84c")
 
 [node name="TextbookDecor" type="AnimatedSprite2D" parent="."]
@@ -149,7 +150,7 @@ animation = &"var1"
 [node name="TextbookDecor2" type="AnimatedSprite2D" parent="."]
 position = Vector2(8, 74)
 sprite_frames = SubResource("SpriteFrames_flqon")
-animation = &"var1"
+animation = &"var2"
 
 [node name="Title" type="Label" parent="."]
 layout_mode = 1
