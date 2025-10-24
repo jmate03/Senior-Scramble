@@ -8,6 +8,7 @@ var time_elapsed: float
 @onready var obstacle_spawner = $obstacle_spawner
 @onready var background = $Background
 @onready var ground = $Ground
+@onready var deathsfx = $"UI/Game Over/DeathSFX"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -57,6 +58,7 @@ func _on_player_game_over():
 	game_over = true
 	obstacle_spawner.stop_spawn()
 	%"Game Over".show()
+	deathsfx.play()
 	%"Final Score".text = "Final Score: " + str(int(score))
 
 # Button functions

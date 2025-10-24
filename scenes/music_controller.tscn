@@ -10,9 +10,11 @@ script = ExtResource("1_nuwea")
 
 [node name="BG Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_o7k1f")
-volume_db = -6.0
+volume_db = -10.0
 autoplay = true
+bus = &"Music"
 
 [node name="MenuButton" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_a2hxn")
 volume_db = 2.0
+bus = &"SFX"

@@ -6,9 +6,11 @@ extends CharacterBody2D
 @onready var duck_timer = $DuckTimer
 @onready var jumpsfx = $JumpSFX
 @onready var ducksfx = $DuckSFX
+@onready var hitsfx = $HitSFX
 var is_ducking = false
 const SPEED = 300.0
 const JUMP_VELOCITY = -360.0
+var is_dead = false
 
 signal hit
 signal lives_changed(new_lives)
@@ -82,14 +84,18 @@ func _on_hit():
 	lose_life()
 
 func lose_life():
+	if is_dead:
+		return
 	lives -= 1
 	emit_signal("lives_changed", lives)
 	print("Lives remaining: ", lives)
 	
 	if lives <= 0:
+		is_dead = true
 		emit_signal("game_over")
 		set_physics_process(false) 
 	else:
+		hitsfx.play()
 		become_invulnerable()
 
 func become_invulnerable():

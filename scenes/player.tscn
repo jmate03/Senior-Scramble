@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://d2fuxm38ciwt4"]
+[gd_scene load_steps=24 format=3 uid="uid://d2fuxm38ciwt4"]
 
 [ext_resource type="Script" uid="uid://cj8n0y4qwrc5q" path="res://scripts/player.gd" id="1_lj8jo"]
 [ext_resource type="Texture2D" uid="uid://bch0wlfa4o8d0" path="res://assets/Player/player_idle.png" id="2_g2brh"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cgoqwpppartwo" path="res://assets/Player/player_jump.png" id="3_dqkch"]
 [ext_resource type="AudioStream" uid="uid://edns5hfjf8vw" path="res://assets/Sound/sen_jump.mp3" id="6_tuyoq"]
 [ext_resource type="AudioStream" uid="uid://7vupl1va3gdl" path="res://assets/Sound/sen_duck.mp3" id="7_fjrip"]
+[ext_resource type="AudioStream" uid="uid://darv5jm6lkse5" path="res://assets/Sound/sen_hit.mp3" id="8_smehm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tuyoq"]
 atlas = ExtResource("2_qlg0r")
@@ -132,6 +133,7 @@ script = ExtResource("1_lj8jo")
 position = Vector2(0, -9)
 sprite_frames = SubResource("SpriteFrames_t53lx")
 animation = &"run"
+frame_progress = 0.796587
 
 [node name="StandingCollision" type="CollisionShape2D" parent="."]
 position = Vector2(0, -8)
@@ -149,3 +151,8 @@ stream = ExtResource("6_tuyoq")
 
 [node name="DuckSFX" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_fjrip")
+
+[node name="HitSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_smehm")
+volume_db = 10.0
+pitch_scale = 2.0
