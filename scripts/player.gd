@@ -15,11 +15,13 @@ var is_dead = false
 signal hit
 signal lives_changed(new_lives)
 signal game_over
+signal dollar_collected
 
 var lives: int = 3
 var is_invulnerable = false
 
 func _ready():
+	add_to_group("player")
 	standing_collision.disabled = false
 	ducking_collision.disabled = true
 	
@@ -92,12 +94,15 @@ func lose_life():
 	
 	if lives <= 0:
 		is_dead = true
+		collision_layer = 0
+		collision_mask = 0
 		emit_signal("game_over")
 		set_physics_process(false) 
 	else:
 		hitsfx.play()
 		become_invulnerable()
 
+# Grace period between taking a hit
 func become_invulnerable():
 	is_invulnerable = true
 	
@@ -111,3 +116,9 @@ func become_invulnerable():
 	await get_tree().create_timer(2.0).timeout
 	is_invulnerable = false
 	animated.modulate.a = 1.0
+
+
+func collect_dollar(value: int):
+	emit_signal("dollar_collected",value)
+	
+	

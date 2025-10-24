@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://3orj5xv2jc2v" path="res://scripts/idle_player.gd" id="4_wu84c"]
 [ext_resource type="Texture2D" uid="uid://d3pyr6jq2ve7f" path="res://assets/UI/backbutton.png" id="5_8ln24"]
 [ext_resource type="Texture2D" uid="uid://bdgtabhuv5ykd" path="res://assets/Obstacles/textbooks.png" id="7_tbmy8"]
-[ext_resource type="Script" uid="uid://bk0whsmeec4u5" path="res://scenes/tab_container.gd" id="8_5dd4i"]
+[ext_resource type="Script" uid="uid://bk0whsmeec4u5" path="res://scripts/tab_container.gd" id="8_5dd4i"]
 [ext_resource type="Texture2D" uid="uid://dslxltcj0sard" path="res://assets/Obstacles/papers.png" id="8_jk1qb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rcqid"]

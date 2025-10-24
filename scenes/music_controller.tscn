@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cry1hbm561ixp"]
 
-[ext_resource type="Script" uid="uid://cv0wfch6jagxa" path="res://scenes/music_controller.gd" id="1_nuwea"]
+[ext_resource type="Script" uid="uid://cv0wfch6jagxa" path="res://scripts/music_controller.gd" id="1_nuwea"]
 [ext_resource type="AudioStream" uid="uid://4vyy13u2ls3a" path="res://assets/Sound/SeniorScrambleBGM.wav" id="1_o7k1f"]
 [ext_resource type="AudioStream" uid="uid://cr74l4i2ub1he" path="res://assets/Sound/sen_menu.mp3" id="3_a2hxn"]
 

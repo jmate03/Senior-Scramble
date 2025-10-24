@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://benlml5bb31f0"]
+
+[ext_resource type="Script" uid="uid://tixdgldlnxbk" path="res://scripts/dollar.gd" id="1_7ohs3"]
+[ext_resource type="Texture2D" uid="uid://b61jcyusm01nm" path="res://assets/Background/dollar.png" id="2_c6fjb"]
+[ext_resource type="AudioStream" uid="uid://yh8k8ta0dhio" path="res://assets/Sound/sen_dollar.mp3" id="3_c6fjb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ohs3"]
+size = Vector2(16, 9)
+
+[node name="Dollar" type="Area2D"]
+script = ExtResource("1_7ohs3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_c6fjb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_7ohs3")
+
+[node name="DollarSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_c6fjb")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

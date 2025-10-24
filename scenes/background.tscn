@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dapy7lw0hgcdd"]
 
-[ext_resource type="Script" uid="uid://c4w5pwijtbdg3" path="res://scenes/background.gd" id="1_jougr"]
+[ext_resource type="Script" uid="uid://c4w5pwijtbdg3" path="res://scripts/background.gd" id="1_jougr"]
 [ext_resource type="Texture2D" uid="uid://bive1h6th8syu" path="res://assets/Background/parallax2.png" id="1_y0upk"]
 [ext_resource type="Texture2D" uid="uid://djdn0cdx5ljfw" path="res://assets/Background/parallax1.png" id="2_jougr"]
 

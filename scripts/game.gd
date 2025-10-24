@@ -23,6 +23,8 @@ func _ready() -> void:
 	
 	%"Pause Menu".hide()
 	%"Game Over".hide()
+	
+	$Player.dollar_collected.connect(_on_dollar_collected)
 	start_game()
 
 
@@ -53,6 +55,8 @@ func update_time(delta):
 	var seconds = int(time_elapsed) % 60
 	$"UI/Time Elapsed Label".text = "Time: %02d:%02d" % [minutes, seconds]
 
+func _on_dollar_collected(value: int):
+	score += value
 func _on_player_game_over():
 	game_running = false
 	game_over = true
