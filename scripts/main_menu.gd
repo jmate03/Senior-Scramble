@@ -32,5 +32,4 @@ func _on_music_slider_mouse_exited() -> void:
 
 
 func _on_apply_pressed() -> void:
-	print("apply pressed")
 	AudioServer.set_bus_volume_db(0, linear_to_db(%MusicSlider.value))

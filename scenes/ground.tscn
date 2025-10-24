@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=4 uid="uid://8d08jrf8kku2"]
 
-[ext_resource type="Texture2D" uid="uid://bxbfqvbqmnrxj" path="res://assets/wood_floor.png" id="1_mi8v4"]
+[ext_resource type="Texture2D" uid="uid://bxbfqvbqmnrxj" path="res://assets/Background/wood_floor.png" id="1_mi8v4"]
 [ext_resource type="Script" uid="uid://dnsgv87t3fbrk" path="res://scripts/ground.gd" id="2_lmksl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lbhrr"]

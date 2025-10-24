@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxbfqvbqmnrxj"
-path="res://.godot/imported/wood_floor.png-37d408fc1e27a0da640a55ba62dc5fc9.ctex"
+uid="uid://bive1h6th8syu"
+path="res://.godot/imported/parallax2.png-48bca75378044dc482d1fab3abda91a0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/wood_floor.png"
-dest_files=["res://.godot/imported/wood_floor.png-37d408fc1e27a0da640a55ba62dc5fc9.ctex"]
+source_file="res://assets/Background/parallax2.png"
+dest_files=["res://.godot/imported/parallax2.png-48bca75378044dc482d1fab3abda91a0.ctex"]
 
 [params]
 

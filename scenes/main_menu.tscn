@@ -1,10 +1,28 @@
-[gd_scene load_steps=17 format=3 uid="uid://bphehqrf67473"]
+[gd_scene load_steps=25 format=3 uid="uid://bphehqrf67473"]
 
 [ext_resource type="Script" uid="uid://dxge4xu6fn5by" path="res://scripts/main_menu.gd" id="1_ekxnf"]
 [ext_resource type="FontFile" uid="uid://cnk4iqinc1vkp" path="res://assets/MedodicaRegular.otf" id="1_l6cm7"]
+[ext_resource type="Texture2D" uid="uid://dbyv0n32gc055" path="res://assets/Background/mainmenubg.png" id="2_rtw2f"]
 [ext_resource type="Texture2D" uid="uid://bch0wlfa4o8d0" path="res://assets/Player/player_idle.png" id="3_bqqt6"]
 [ext_resource type="Script" uid="uid://3orj5xv2jc2v" path="res://scripts/idle_player.gd" id="4_wu84c"]
 [ext_resource type="Texture2D" uid="uid://d3pyr6jq2ve7f" path="res://assets/UI/backbutton.png" id="5_8ln24"]
+[ext_resource type="Texture2D" uid="uid://bdgtabhuv5ykd" path="res://assets/Obstacles/textbooks.png" id="7_tbmy8"]
+[ext_resource type="Texture2D" uid="uid://dslxltcj0sard" path="res://assets/Obstacles/papers.png" id="8_jk1qb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rcqid"]
+atlas = ExtResource("8_jk1qb")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1ajci"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rcqid")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wu84c"]
 atlas = ExtResource("3_bqqt6")
@@ -42,6 +60,33 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_5dd4i"]
+atlas = ExtResource("7_tbmy8")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lgwnu"]
+atlas = ExtResource("7_tbmy8")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_flqon"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5dd4i")
+}],
+"loop": false,
+"name": &"var1",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lgwnu")
+}],
+"loop": false,
+"name": &"var2",
+"speed": 0.0
+}]
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l6cm7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l6cm7"]
@@ -77,6 +122,35 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ekxnf")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -160.0
+offset_top = -90.0
+offset_right = 160.0
+offset_bottom = 90.0
+texture = ExtResource("2_rtw2f")
+
+[node name="DueDecor" type="AnimatedSprite2D" parent="."]
+position = Vector2(115, -10)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_1ajci")
+
+[node name="IdlePlayer" type="AnimatedSprite2D" parent="."]
+position = Vector2(58, 20)
+scale = Vector2(3, 3.062)
+sprite_frames = SubResource("SpriteFrames_tbmy8")
+script = ExtResource("4_wu84c")
+
+[node name="TextbookDecor" type="AnimatedSprite2D" parent="."]
+position = Vector2(-36, 74)
+sprite_frames = SubResource("SpriteFrames_flqon")
+animation = &"var1"
+
+[node name="TextbookDecor2" type="AnimatedSprite2D" parent="."]
+position = Vector2(8, 74)
+sprite_frames = SubResource("SpriteFrames_flqon")
+animation = &"var1"
+
 [node name="Title" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -92,17 +166,10 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_y = 2
+theme_override_constants/shadow_outline_size = 4
 theme_override_fonts/font = ExtResource("1_l6cm7")
 theme_override_font_sizes/font_size = 32
 text = "Senior Scramble!"
-
-[node name="IdlePlayer" type="AnimatedSprite2D" parent="."]
-position = Vector2(-121, 54)
-scale = Vector2(4.41406, 4.50507)
-sprite_frames = SubResource("SpriteFrames_tbmy8")
-animation = &"idle"
-frame_progress = 0.590495
-script = ExtResource("4_wu84c")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -164,6 +231,7 @@ text = "Exit
 
 [node name="Settings" type="ColorRect" parent="."]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 offset_left = -160.0
 offset_top = -90.0

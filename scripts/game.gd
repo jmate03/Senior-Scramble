@@ -6,6 +6,8 @@ var time_elapsed: float
 
 @onready var player = $Player  
 @onready var obstacle_spawner = $obstacle_spawner
+@onready var background = $Background
+@onready var ground = $Ground
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -28,6 +30,8 @@ func _process(delta: float) -> void:
 	if game_running:
 		update_time(delta)
 		update_score(delta)
+		var ground_speed = ground.SCROLL_SPEED
+		background.scroll(ground_speed, delta)
 	if Input.is_action_just_pressed("pause"):
 		_on_pause_button_pressed()
 	
