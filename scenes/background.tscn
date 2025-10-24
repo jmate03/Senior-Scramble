@@ -10,7 +10,7 @@ script = ExtResource("1_jougr")
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="Background" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2(0.6, 0.6)
+motion_scale = Vector2(0.8, 0.8)
 motion_mirroring = Vector2(320, 0)
 
 [node name="Sky" type="Sprite2D" parent="ParallaxBackground/Background"]

@@ -2,7 +2,11 @@ extends Node
 var game_running : bool 
 var game_over : bool 
 var score
-var time_elapsed: float
+var time_elapsed: float = 0.0
+var game_speed: float = 100.0
+var base_speed: float = 100.0
+var max_speed: float = 300.0
+var increase_rate: float = 3
 
 @onready var player = $Player  
 @onready var obstacle_spawner = $obstacle_spawner
@@ -33,6 +37,8 @@ func _process(delta: float) -> void:
 	if game_running:
 		update_time(delta)
 		update_score(delta)
+		update_difficulty(delta)
+		update_objects()
 		var ground_speed = ground.SCROLL_SPEED
 		background.scroll(ground_speed, delta)
 	if Input.is_action_just_pressed("pause"):
@@ -45,6 +51,14 @@ func start_game():
 	$"UI/Score Timer Label".text = "Score: 0"
 	$"UI/Score Timer".start()
 
+func update_difficulty(delta):
+	game_speed = min(base_speed +(time_elapsed * increase_rate), max_speed)
+	ground.SCROLL_SPEED = game_speed
+
+func update_objects():
+	for child in obstacle_spawner.get_children():
+		if "speed" in child:
+			child.speed = game_speed
 func update_score(delta):
 	score += delta
 	$"UI/Score Timer Label".text = "Score: " + str(int(score))

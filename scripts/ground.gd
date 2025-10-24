@@ -3,7 +3,7 @@ var game_running : bool
 var game_over : bool 
 var scroll: float = 0.0
 var score
-const SCROLL_SPEED : float = 100
+var SCROLL_SPEED : float = 100
 var screen_size : Vector2i
 
 # Called when the node enters the scene tree for the first time.

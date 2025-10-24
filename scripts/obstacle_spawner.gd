@@ -5,8 +5,8 @@ extends Node2D
 
 @export var spawn_x_position := 350.0
 @export var ground_y_position := 128.5
-@export var min_spawn_interval := 1.5
-@export var max_spawn_interval := 3.5
+@export var min_spawn_interval := 0.8
+@export var max_spawn_interval := 2.0
 
 var time_until_next_spawn := 0.0
 var time_elapsed := 0.0
