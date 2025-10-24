@@ -4,6 +4,8 @@ extends CharacterBody2D
 @onready var standing_collision = $StandingCollision
 @onready var ducking_collision = $DuckingCollision
 @onready var duck_timer = $DuckTimer
+@onready var jumpsfx = $JumpSFX
+@onready var ducksfx = $DuckSFX
 var is_ducking = false
 const SPEED = 300.0
 const JUMP_VELOCITY = -360.0
@@ -30,6 +32,7 @@ func _physics_process(delta: float) -> void:
 		# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor() and not is_ducking:
 		velocity.y = JUMP_VELOCITY
+		jumpsfx.play()
 		animated.play("jump")
 
 	# Get the input direction and handle the movement/deceleration.
@@ -56,6 +59,7 @@ func start_duck():
 		return
 	is_ducking = true
 	animated.play("duck")
+	ducksfx.play()
 	
 	standing_collision.disabled = true
 	ducking_collision.disabled = false

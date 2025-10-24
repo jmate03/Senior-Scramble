@@ -1,10 +1,12 @@
-[gd_scene load_steps=21 format=3 uid="uid://d2fuxm38ciwt4"]
+[gd_scene load_steps=23 format=3 uid="uid://d2fuxm38ciwt4"]
 
 [ext_resource type="Script" uid="uid://cj8n0y4qwrc5q" path="res://scripts/player.gd" id="1_lj8jo"]
 [ext_resource type="Texture2D" uid="uid://bch0wlfa4o8d0" path="res://assets/Player/player_idle.png" id="2_g2brh"]
 [ext_resource type="Texture2D" uid="uid://dtmlaly01mo54" path="res://assets/Player/player_duck.png" id="2_qlg0r"]
 [ext_resource type="Texture2D" uid="uid://cxs6qpskwivds" path="res://assets/Player/player_run.png" id="3_dn4c7"]
 [ext_resource type="Texture2D" uid="uid://cgoqwpppartwo" path="res://assets/Player/player_jump.png" id="3_dqkch"]
+[ext_resource type="AudioStream" uid="uid://edns5hfjf8vw" path="res://assets/Sound/sen_jump.mp3" id="6_tuyoq"]
+[ext_resource type="AudioStream" uid="uid://7vupl1va3gdl" path="res://assets/Sound/sen_duck.mp3" id="7_fjrip"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tuyoq"]
 atlas = ExtResource("2_qlg0r")
@@ -141,3 +143,9 @@ shape = SubResource("RectangleShape2D_qlg0r")
 
 [node name="DuckTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="JumpSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_tuyoq")
+
+[node name="DuckSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_fjrip")

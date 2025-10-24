@@ -61,16 +61,20 @@ func _on_player_game_over():
 
 # Button functions
 func _on_restart_pressed():
+	MusicController.click_sound()
 	if get_tree().paused == true:
 		get_tree().paused = false
 	get_tree().reload_current_scene()
 func _on_main_menu_pressed():
+	MusicController.click_sound()
 	if get_tree().paused == true:
 		get_tree().paused = false
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 func _on_pause_button_pressed():
+	MusicController.click_sound()
 	%"Pause Menu".show()
 	get_tree().paused = true 
 func _on_resume_button_pressed():
+	MusicController.click_sound()
 	%"Pause Menu".hide()
 	get_tree().paused = false

@@ -12,18 +12,20 @@ func _process(delta: float) -> void:
 
 
 func _on_start_pressed() -> void:
-	# hide() # if main menu is child of game node
-	
-	get_tree().change_scene_to_file("res://scenes/game.tscn") # ideal
+	MusicController.click_sound()
+	get_tree().change_scene_to_file("res://scenes/game.tscn")
 
 
 func _on_settings_pressed() -> void:
+	MusicController.click_sound()
 	%Settings.show()
 
 
 func _on_exit_pressed() -> void:
+	MusicController.click_sound()
 	get_tree().quit()
 func _on_back_pressed() -> void:
+	MusicController.click_sound()
 	%Settings.hide()
 
 
@@ -33,3 +35,4 @@ func _on_music_slider_mouse_exited() -> void:
 
 func _on_apply_pressed() -> void:
 	AudioServer.set_bus_volume_db(0, linear_to_db(%MusicSlider.value))
+	MusicController.click_sound()
